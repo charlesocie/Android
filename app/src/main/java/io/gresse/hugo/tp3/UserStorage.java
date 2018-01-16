@@ -36,12 +36,20 @@ public class UserStorage {
 
     @Nullable
     public static User getUserInfo(Context context) {
-        if(isUserLoggedIn(context)){
+        if(!isUserLoggedIn(context)){
             return null;
         }
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
 
         return new User(sharedPreferences.getString(USER_NAME, ""), sharedPreferences.getString(USER_EMAIL, ""));
+    }
+
+    public static void clearUser(Context context){
+        SharedPreferences.Editor editor =
+            PreferenceManager.getDefaultSharedPreferences(context).edit();
+        editor.putString(USER_NAME, null);
+        editor.putString(USER_EMAIL, null);
+        editor.apply();
     }
 
 }

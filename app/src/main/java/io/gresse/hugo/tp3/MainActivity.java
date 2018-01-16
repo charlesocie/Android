@@ -5,19 +5,28 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.github.curioustechizen.ago.RelativeTimeTextView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * First app open
@@ -98,6 +107,35 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
 
     }
 
+    private Menu m = null;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_message, menu);
+        m = menu;
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected (MenuItem item)
+    {
+        switch(item.getItemId())
+        {
+            case R.id.logout:
+                //Dans le Menu "m", on active tous les items dans le groupe d'identifiant "R.id.group2"
+                User user = UserStorage.getUserInfo(this);
+                UserStorage.clearUser(this);
+                Intent intent = new Intent(this, NamePickerActivity.class);
+                this.startActivity(intent);
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
     private void connectAndListenToFirebase() {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         mDatabaseReference = database.getReference(Constant.FIREBASE_PATH);
@@ -110,12 +148,13 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
         if (message.isEmpty() || user == null) {
             return;
         }
+
         DatabaseReference newData  = mDatabaseReference.push();
         newData.setValue(
-                new Message(message,
+                new Message( message,
                         user.name,
                         user.email,
-                        System.currentTimeMillis() / 1000));
+                        System.currentTimeMillis() ));
     }
 
     @Override
