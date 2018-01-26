@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
     EditText       mInputEditText;
     ImageButton    mSendButton;
     MessageAdapter mMessageAdapter;
+    User user;
 
     DatabaseReference mDatabaseReference;
 
@@ -65,8 +66,9 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         mInputEditText = findViewById(R.id.inputEditText);
         mSendButton = findViewById(R.id.sendButton);
+        user = UserStorage.getUserInfo(this);
 
-        mMessageAdapter = new MessageAdapter(this, new ArrayList<Message>());
+        mMessageAdapter = new MessageAdapter(this, new ArrayList<Message>(), user);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setStackFromEnd(true);
@@ -99,6 +101,9 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
             items.add(message);
         }
         mMessageAdapter.setData(items);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.scrollToPosition(mMessageAdapter.getItemCount() - 1);
+
     }
 
     @Override
@@ -161,4 +166,9 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
     public void onItemClick(int position, Message message) {
         mDatabaseReference.child(message.key).removeValue();
     }
+
+    public void onItemClick2(int position, Message message) {
+        mDatabaseReference.child(message.key).setValue(new Message("valou il est pas beau", message.userName, message.userEmail, message.timestamp ));
+    }
+
 }

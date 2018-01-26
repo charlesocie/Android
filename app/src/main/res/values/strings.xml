@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Firebase Chat</string>
     <string name="name_picker">Choissisez votre nom</string>
+    <string name="boutton_continuer">Continuer</string>
+    <string name="button_supprimer">supprimer</string>
+    <string name="button_valoupasbeau">dire a valou qu\'il est pas beau</string>
+    <string name="boutton_logout">Deconnection</string>
 </resources>

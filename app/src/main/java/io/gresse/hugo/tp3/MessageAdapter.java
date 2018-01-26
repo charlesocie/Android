@@ -27,10 +27,14 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
     private Listener mListener;
     private List<Message> mData;
+    private static final int TYPE_SENT = 1;
+    private static final int TYPE_RECEIVED = 0;
+    private User user;
 
-    public MessageAdapter(Listener listener, List<Message> data) {
+    public MessageAdapter(Listener listener, List<Message> data, User user) {
         mListener = listener;
         mData = data;
+        this.user = user;
     }
 
     public void setData(List<Message> data) {
@@ -40,8 +44,23 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_messages, parent, false);
+        View view;
+        if(viewType == TYPE_SENT) {
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_user_messages, parent, false);
+        }
+        else {
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_receved_messages, parent, false);
+        }
         return new ViewHolder(view);
+    }
+
+    public int getItemViewType(int position){
+        if(mData.get(position).userEmail.equals(user.email)){
+            return TYPE_SENT;
+        }
+        else {
+            return TYPE_RECEIVED;
+        }
     }
 
     @Override
@@ -100,8 +119,11 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener()  {
                 public boolean onMenuItemClick(MenuItem item) {
                     Toast.makeText(mContentTextView.getContext(),"You Clicked : " + item.getTitle(),Toast.LENGTH_SHORT).show();
-                    if (item.getTitle().equals("le supprimer") ){
+                    if (item.getTitle().equals("supprimer") || item.getTitle().equals("remove")   ){
                         mListener.onItemClick(getAdapterPosition(), mData.get(getAdapterPosition()));
+                    }
+                    else if(item.getTitle().equals("dire a valou qu'il est pas beau") || item.getTitle().equals("tell to valou he is uggly")){
+                        mListener.onItemClick2(getAdapterPosition(), mData.get(getAdapterPosition()));
                     }
                     return true;
                 }
@@ -114,5 +136,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
     public interface Listener {
         void onItemClick(int position, Message message);
+
+        void onItemClick2(int adapterPosition, Message message);
     }
 }

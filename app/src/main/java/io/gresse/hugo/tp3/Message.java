@@ -14,9 +14,11 @@ public class Message {
     public String userEmail;
     public Long   timestamp;
 
-    public Message() {
+    public Message(){}
+
+    public Message(Message message) {
         // Empty constructor for Firebase
-        this(null, null, null, null, null);
+        this(message.key, message.content, message.userName, message.userEmail, message.timestamp);
     }
 
     public Message(String content, String userName, String userEmail, Long timestamp) {

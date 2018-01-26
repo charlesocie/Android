@@ -4,10 +4,10 @@
 
         <item
             android:id="@+id/sup"
-            android:title="le supprimer"/>
+            android:title="@string/button_supprimer"/>
 
         <item
             android:id="@+id/cqvv"
-            android:title="ce que vous voulez"/>
+            android:title="@string/button_valoupasbeau"/>
 
 </menu>
