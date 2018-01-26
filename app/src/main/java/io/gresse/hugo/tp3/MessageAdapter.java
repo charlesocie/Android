@@ -119,10 +119,10 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener()  {
                 public boolean onMenuItemClick(MenuItem item) {
                     Toast.makeText(mContentTextView.getContext(),"You Clicked : " + item.getTitle(),Toast.LENGTH_SHORT).show();
-                    if (item.getTitle().equals("supprimer") || item.getTitle().equals("remove")   ){
+                    if(item.getItemId()==R.id.sup){
                         mListener.onItemClick(getAdapterPosition(), mData.get(getAdapterPosition()));
                     }
-                    else if(item.getTitle().equals("dire a valou qu'il est pas beau") || item.getTitle().equals("tell to valou he is uggly")){
+                    else if((item.getItemId()==R.id.cqvv)){
                         mListener.onItemClick2(getAdapterPosition(), mData.get(getAdapterPosition()));
                     }
                     return true;
