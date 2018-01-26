@@ -28,3 +28,5 @@ Liste des fonctionnalités:
  
  Capture D'écrans :
  
+  Ressouce/Screenshot_2018-01-26-12-19-54.png 
+ 
