@@ -30,12 +30,14 @@ Liste des fonctionnalités:
  
  Connection
  
- ![connection](https://github.com/charlesocie/Android/blob/master/Ressouce/Screenshot_2018-01-26-12-19-54.png = 250x250)
+ <img src="https://github.com/charlesocie/Android/blob/master/Ressouce/Screenshot_2018-01-26-12-19-54.png" data-canonical-src="https://github.com/charlesocie/Android/blob/master/Ressouce/Screenshot_2018-01-26-12-19-54.png" width="400" height="600" />
  
  Discussion
  
-  ![chat](https://github.com/charlesocie/Android/blob/master/Ressouce/Screenshot_2018-01-26-12-20-26.png  | width=100 )
+  <img src="https://github.com/charlesocie/Android/blob/master/Ressouce/Screenshot_2018-01-26-12-20-26.png" data-canonical-src="https://github.com/charlesocie/Android/blob/master/Ressouce/Screenshot_2018-01-26-12-20-26.png" width="400" height="600" />
+
  
  Option (rester appuyer sur le message)
  
- ![option](https://github.com/charlesocie/Android/blob/master/Ressouce/Screenshot_2018-01-26-12-20-37.png)
+  <img src="https://github.com/charlesocie/Android/blob/master/Ressouce/Screenshot_2018-01-26-12-20-37.png" data-canonical-src="https://github.com/charlesocie/Android/blob/master/Ressouce/Screenshot_2018-01-26-12-20-37.png" width="400" height="600" />
+
