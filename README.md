@@ -29,10 +29,12 @@ Liste des fonctionnalités:
  Capture D'écrans :
  
  Connection
- ![connection](https://github.com/charlesocie/Android/blob/master/Ressouce/Screenshot_2018-01-26-12-19-54.png)
+ 
+ ![connection](https://github.com/charlesocie/Android/blob/master/Ressouce/Screenshot_2018-01-26-12-19-54.png = 250x250)
  
  Discussion
-  ![chat](https://github.com/charlesocie/Android/blob/master/Ressouce/Screenshot_2018-01-26-12-20-26.png)
+ 
+  ![chat](https://github.com/charlesocie/Android/blob/master/Ressouce/Screenshot_2018-01-26-12-20-26.png  | width=100 )
  
  Option (rester appuyer sur le message)
  
