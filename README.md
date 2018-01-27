@@ -28,9 +28,12 @@ Liste des fonctionnalités:
  
  Capture D'écrans :
  
- https://github.com/charlesocie/Android/blob/master/Ressouce/Screenshot_2018-01-26-12-19-54.png
+ Connection
+ ![connection](https://github.com/charlesocie/Android/blob/master/Ressouce/Screenshot_2018-01-26-12-19-54.png)
  
-  https://github.com/charlesocie/Android/Ressouce/Screenshot_2018-01-26-12-19-54.png 
+ Discussion
+  ![chat](https://github.com/charlesocie/Android/blob/master/Ressouce/Screenshot_2018-01-26-12-20-26.png)
  
-  https://github.com/Charlesocie/Android/Ressouce/Screenshot_2018-01-26-12-19-54.png 
+ Option (rester appuyer sur le message)
  
+ ![option](https://github.com/charlesocie/Android/blob/master/Ressouce/Screenshot_2018-01-26-12-20-37.png)
