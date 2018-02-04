@@ -26,9 +26,9 @@ Liste des fonctionnalités:
  
  Copyright 2018 Charles Socie
  
- Capture D'écrans :
+ Captures D'écrans :
  
- Connection
+ Connexion 
  
  <img src="https://github.com/charlesocie/Android/blob/master/Ressouce/Screenshot_2018-01-26-12-19-54.png" data-canonical-src="https://github.com/charlesocie/Android/blob/master/Ressouce/Screenshot_2018-01-26-12-19-54.png" width="400" height="600" />
  
