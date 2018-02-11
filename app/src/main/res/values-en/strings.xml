@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Firebase Chat</string>
+    <string name="name_picker">Choose a name</string>
+    <string name="boutton_continuer">Continue</string>
+    <string name="button_supprimer">remove</string>
+    <string name="button_valoupasbeau">tell to valou he is uggly</string>
+    <string name="boutton_logout">Logout</string>
+</resources>
